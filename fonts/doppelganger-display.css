@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Doppelganger-Display';
+	src: url('../fonts/doppelganger-display.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/doppelganger-display.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/doppelganger-display.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/doppelganger-display.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/doppelganger-display.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/doppelganger-display.svg#doppelganger-display') format('svg'); /* Chrome < 4, Legacy iOS */
+}
