@@ -169,6 +169,7 @@ img, textarea, input, table {
         outline: none;
         font-family: $rc;
         transition: all 0.3s;
+        text-align: center;
 
         &:hover,&:focus {
             border-color: $white_y;
@@ -466,6 +467,11 @@ img, textarea, input, table {
     font-family: $rc;
     text-decoration: none;
     position: relative;
+    transition: 0.5s;
+
+    &:hover {
+        background: $green;
+    }
 
     &.anim {
 
@@ -493,14 +499,35 @@ img, textarea, input, table {
     }
 
     &.green {
-        background: $green;
+        background: radial-gradient(50% 50% at 50% 50%, $green 0%, $green 100%);
+        z-index: 1;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 63px;
+            background: radial-gradient(50% 50% at 50% 50%, rgb(255, 181, 36) 0%, rgb(255, 102, 36) 100%);
+            opacity: 0;
+            content: '';
+            transition: 0.5s;
+        }
+
+        span,i {
+            position: relative;
+            z-index: 1;
+        }
 
         &:before {
             border-color: $green;
         }
 
         &:hover {
-            background: radial-gradient(50% 50% at 50% 50%, rgb(255, 181, 36) 0%, rgb(255, 102, 36) 100%);
+            &:after {
+                opacity: 1;
+            }
 
             &:before {
                 border-color: $white_y;
@@ -1058,6 +1085,17 @@ img, textarea, input, table {
                 cursor: pointer;
                 margin: 0 0 0 -100px;
 
+                i {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                    background: url("data:image/svg+xml,%3Csvg width='24' height='35' viewBox='0 0 24 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 2C13.5 1.17157 12.8284 0.5 12 0.5C11.1716 0.5 10.5 1.17157 10.5 2L13.5 2ZM10.9393 34.0607C11.5251 34.6464 12.4749 34.6464 13.0607 34.0607L22.6066 24.5147C23.1924 23.9289 23.1924 22.9792 22.6066 22.3934C22.0208 21.8076 21.0711 21.8076 20.4853 22.3934L12 30.8787L3.51472 22.3934C2.92893 21.8076 1.97919 21.8076 1.3934 22.3934C0.807612 22.9792 0.807612 23.9289 1.3934 24.5147L10.9393 34.0607ZM10.5 2L10.5 33L13.5 33L13.5 2L10.5 2Z' fill='white' /%3E%3C/svg%3E") 50% no-repeat;
+                }
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -1065,7 +1103,10 @@ img, textarea, input, table {
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    background: url("data:image/svg+xml,%3Csvg width='24' height='35' viewBox='0 0 24 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 2C13.5 1.17157 12.8284 0.5 12 0.5C11.1716 0.5 10.5 1.17157 10.5 2L13.5 2ZM10.9393 34.0607C11.5251 34.6464 12.4749 34.6464 13.0607 34.0607L22.6066 24.5147C23.1924 23.9289 23.1924 22.9792 22.6066 22.3934C22.0208 21.8076 21.0711 21.8076 20.4853 22.3934L12 30.8787L3.51472 22.3934C2.92893 21.8076 1.97919 21.8076 1.3934 22.3934C0.807612 22.9792 0.807612 23.9289 1.3934 24.5147L10.9393 34.0607ZM10.5 2L10.5 33L13.5 33L13.5 2L10.5 2Z' fill='white' /%3E%3C/svg%3E") 50% no-repeat;
+                    border-radius: 50%;
+                    background: radial-gradient(50% 50% at 50% 50%, rgb(255, 181, 36) 0%, rgb(255, 102, 36) 100%);
+                    opacity: 0;
+                    transition: all .3s;
                 }
 
                 &:before {
@@ -1091,7 +1132,10 @@ img, textarea, input, table {
                 }
 
                 &:hover {
-                    background: radial-gradient(50% 50% at 50% 50%, rgb(255, 181, 36) 0%, rgb(255, 102, 36) 100%);
+                    
+                    &:after {
+                        opacity: 1;
+                    }
 
                     &:before {
                         border-color: $white_y;
@@ -1125,7 +1169,7 @@ img, textarea, input, table {
                     display: inline-flex;
                     gap: 10px;
 
-                    &:after {
+                    i {
                         content: '';
                         width: 16px;
                         height: 16px;
@@ -1230,13 +1274,7 @@ img, textarea, input, table {
                     right: 0;
                     margin: 0;
 
-                    &:after {
-                        background-size: 18px;
-                    }
-                    
-                    margin: 0;
-
-                    &:after {
+                    i {
                         background-size: 18px;
                     }
                 }
@@ -1296,7 +1334,7 @@ img, textarea, input, table {
                     right: 0;
                     margin: 0;
 
-                    &:after {
+                    i {
                         background-size: 18px;
                     }
                 }
@@ -2283,10 +2321,36 @@ img, textarea, input, table {
         right: -150px;
         width: 814px;
         height: 1154px;
+
+        @media all and (min-width: 1331px) and (max-width: 1500px){
+            width: 740px;
+            height: 1046px;
+        }
+
+        @media all and (min-width: 1201px) and (max-width: 1330px){
+            width: 600px;
+            height: 852px;
+        }
+
+        @media all and (min-width: 1021px) and (max-width: 1200px){
+            width: 500px;
+            height: 752px;
+        }
+
+        @media all and (max-width: 1020px) {
+            width: 450px;
+            height: 400px;
+        }
     }
 
     @media all and (max-width: 1300px){ 
         padding: 0 20px;
+    }
+
+    @media all and (max-width: 767px){
+        #scene_tr {
+            display: none;
+        }
     }
 
     .block_inner {
@@ -2338,12 +2402,153 @@ img, textarea, input, table {
                 font-size: 18px;
                 padding: 14px 54px;
 
-                &:after {
+                i {
                     content: '';
                     width: 32px;
                     height: 32px;
                     background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.99902 17V6C5.99902 5.73478 6.10438 5.48043 6.29192 5.29289C6.47945 5.10536 6.73381 5 6.99902 5H19L26 12V17' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M19 5V12H26.001' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M6 25H8C8.53043 25 9.03914 24.7893 9.41421 24.4142C9.78929 24.0391 10 23.5304 10 23C10 22.4696 9.78929 21.9609 9.41421 21.5858C9.03914 21.2107 8.53043 21 8 21H6V27' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M15.5 27C16.2956 27 17.0587 26.6839 17.6213 26.1213C18.1839 25.5587 18.5 24.7956 18.5 24C18.5 23.2044 18.1839 22.4413 17.6213 21.8787C17.0587 21.3161 16.2956 21 15.5 21H14V27H15.5Z' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M26 21H22.5V27' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M25.5 24.5H22.5' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E") 50% no-repeat;
                     flex: 0 0 32px;
+                }
+            }
+        }
+
+        .mobile_image {
+            text-align: center;
+            margin-bottom: -70px;
+            display: none;
+            margin-top: 30px;
+        }
+
+        @media all and (min-width: 1301px) and (max-width: 1500px){
+            padding: 60px 0 164px;
+
+            .left {
+                width: 752px;
+
+                .title {
+
+                    span {
+                        font-size: 70px;
+                        max-width: 400px;
+                    }
+                }
+
+                .name{
+                    font-size: 200px;
+                }
+
+                .text {
+                    font-size: 16px;
+                    max-width: 620px;
+                }
+            }
+        }
+
+        @media all and (min-width: 1021px) and (max-width: 1300px){
+            padding: 60px 0 100px;
+
+            .left {
+                width: 700px;
+
+                .title {
+
+                    span {
+                        font-size: 50px;
+                        max-width: 350px;
+                    }
+                }
+
+                .name{
+                    font-size: 150px;
+                }
+
+                .text {
+                    font-size: 16px;
+                    max-width: 500px;
+                    padding-top: 80px;
+                }
+            }
+        }
+
+        @media all and (min-width: 768px) and (max-width: 1020px){
+            padding: 60px 0 100px;
+
+            .left {
+                width: 500px;
+
+                .title {
+                    max-width: 320px;
+
+                    span {
+                        font-size: 30px;
+                        max-width: 164px;
+                    }
+                }
+
+                .name{
+                    font-size: 78px;
+                }
+
+                .text {
+                    font-size: 16px;
+                    max-width: 400px;
+                    padding-top: 80px;
+                }
+            }
+        }
+
+        @media all and (max-width: 767px){
+            padding: 20px 0 24px;
+
+            .mobile_image {
+                display: block;
+            }
+
+            .left {
+                width: auto;
+                max-width: 500%;
+                margin: 0 auto;
+                text-align: center;
+
+                .title {
+                    max-width: 320px;
+                    margin: 0 auto;
+
+                    span {
+                        font-size: 30px;
+                        max-width: 164px;
+                    }
+                }
+
+                .name{
+                    font-size: 78px;
+                    max-width: 320px;
+                    margin: 0 auto;
+                    text-align: left;
+                }
+
+                .text {
+                    font-size: 16px;
+                    max-width: 100%;
+                    padding-top: 40px;
+                    text-align: center;
+                    padding-bottom: 30px;
+                }
+
+                .btn_button {
+                    display: inline-flex;
+                    gap: 6px;
+                    font-size: 14px;
+                    padding: 8px 25px;
+
+                    i {
+                        content: '';
+                        width: 24px;
+                        height: 24px;
+                        background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.99902 17V6C5.99902 5.73478 6.10438 5.48043 6.29192 5.29289C6.47945 5.10536 6.73381 5 6.99902 5H19L26 12V17' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M19 5V12H26.001' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M6 25H8C8.53043 25 9.03914 24.7893 9.41421 24.4142C9.78929 24.0391 10 23.5304 10 23C10 22.4696 9.78929 21.9609 9.41421 21.5858C9.03914 21.2107 8.53043 21 8 21H6V27' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M15.5 27C16.2956 27 17.0587 26.6839 17.6213 26.1213C18.1839 25.5587 18.5 24.7956 18.5 24C18.5 23.2044 18.1839 22.4413 17.6213 21.8787C17.0587 21.3161 16.2956 21 15.5 21H14V27H15.5Z' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M26 21H22.5V27' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M25.5 24.5H22.5' stroke='%231A1C1D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E") 50% no-repeat;
+                        flex: 0 0 24px;
+                        background-size: 24px;
+                    }
                 }
             }
         }
@@ -2488,6 +2693,10 @@ img, textarea, input, table {
         height: 1656px;
         z-index: -1;
         border: 0.5px solid $orange;
+
+        @media all and (max-width: 767px){
+            display: none;
+        }
     }
 }
 
@@ -2614,13 +2823,13 @@ img, textarea, input, table {
 }
 
 .recomended_block {
-    background: $black;
+    background: $white_y;
     padding-right: 100px;
     padding-left: 100px;
     margin-bottom: 152px;
 
     .block_inner {
-        background: $white_y;
+        
         padding: 80px 30px 64px;
     }
 
@@ -2644,12 +2853,17 @@ img, textarea, input, table {
             border-radius: 250px;
             text-decoration: none;
             color: #000;
-            
             font-size: 18px;
             font-weight: 700;
             line-height: 23px;
             text-transform: uppercase;
             text-align: center;
+            transition: all .3s;
+
+            &:hover {
+                color: $orange;
+                border-color: $orange;
+            }
         }
     }
 
@@ -2783,8 +2997,7 @@ img, textarea, input, table {
     }
 
     .block_inner {
-        padding-right: 40px;
-        padding-left: 54px;
+        max-width: 100%;
     }
 
     .title {
@@ -3210,6 +3423,7 @@ img, textarea, input, table {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
     a {
         width: 50px;
         height: 50px;
@@ -3219,6 +3433,23 @@ img, textarea, input, table {
         justify-content: center;
         margin-right: 8px;
         margin-left: 8px;
+        transition: all .3s;
+
+        svg path {
+            transition: all .3s;
+        }
+
+        &:hover {
+            border-color: $white_y;
+
+            svg:not(.icon_mail) path {
+                fill: $white_y;
+            }
+
+            svg.icon_mail path {
+                stroke: $white_y;
+            }
+        }
     }
 }
 
@@ -4095,10 +4326,6 @@ img, textarea, input, table {
     .trust_block {
         .title {
             margin-top: -40px;
-        }
-        .block_inner {
-            padding-right: 0;
-            padding-left: 20px;
         }
         .items-wrap {
             margin-top: -40px;
