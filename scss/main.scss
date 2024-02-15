@@ -4404,3 +4404,21 @@ img, textarea, input, table {
         height: 148px;
     }
 }
+
+.fixed_massengers {
+    position: fixed;
+    bottom: 300px;
+    right: 22px;
+    z-index: 20;
+
+    @media all and (max-width: 1340px){
+        display: none;
+    }
+
+    a {
+        display: block;
+        width: 58px;
+        text-decoration: none;
+        margin-bottom: 12px;
+    }
+}
