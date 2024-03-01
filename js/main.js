@@ -300,8 +300,10 @@ $(function(){
     });
 
     $('.menu_form_wrapper .item .left_block').on('click', function(){
-        $(this).closest('.item').siblings().removeClass('opened')
+        $(this).closest('.item').siblings().removeClass('opened');
+        $(this).closest('.item').siblings().find('.right_block').slideUp();
         $(this).closest('.item').addClass('opened');
+        $(this).closest('.item').find('.right_block').slideDown();
     });
 
     $( ".date_input" ).datepicker({

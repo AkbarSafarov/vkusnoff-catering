@@ -1556,18 +1556,23 @@ img, textarea, input, table {
             justify-content: end;
             padding-bottom: 51px;
             padding-top: 20px;
+            align-items: start;
 
             .text {
-                bottom: 0;
-                right: 110px;
-                left: auto;
+                position: relative;
+                bottom: auto;
+                right: auto;
                 font-size: 12px;
                 width: 210px;
+                margin: 86px -105px 0 0;
+                z-index: 10;
+                padding: 10px 20px;
             }
 
             .image {
                 max-width: 210px;
                 height: 227px;
+                order: 1;
             }
         }
     }
@@ -2880,6 +2885,12 @@ img, textarea, input, table {
                     }
                 }
 
+                &:first-child {
+                    .right_block {
+                        display: block;
+                    }
+                }
+
                 &.opened {
                     margin-bottom: 30px;
                     .left_block{
@@ -2887,7 +2898,6 @@ img, textarea, input, table {
                     }
 
                     .right_block {
-                        display: block;
                     }
                 }
             }
@@ -3355,13 +3365,20 @@ img, textarea, input, table {
             margin-bottom: 10px;
         }
 
-        .date,
-        .name-sec {
+        .date {
             
             font-size: 22px;
             font-weight: 700;
             line-height: 22px;
             color: $orange;
+        }
+
+        .name-sec {
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 26px;
+            letter-spacing: 0em;
+            color: $white_y;
         }
 
         .body {
@@ -4153,12 +4170,17 @@ img, textarea, input, table {
             flex: 0 0 100%;
             width: 100%;
             padding: 30px 20px;
+            position: static;
 
             .name {
                 margin-bottom: 14px;
             }
             .btns_wrap {
-                display: none;
+                position: absolute;
+                bottom: 40px;
+                right: 20px;
+                left: auto;
+                margin: 0;
             }
         }
 

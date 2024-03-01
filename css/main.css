@@ -1682,17 +1682,26 @@ img, textarea, input, table {
             justify-content: end;
     padding-bottom: 51px;
     padding-top: 20px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
   .keytering_block_wr .right .text {
-    bottom: 0;
-    right: 110px;
-    left: auto;
+    position: relative;
+    bottom: auto;
+    right: auto;
     font-size: 12px;
     width: 210px;
+    margin: 86px -105px 0 0;
+    z-index: 10;
+    padding: 10px 20px;
   }
   .keytering_block_wr .right .image {
     max-width: 210px;
     height: 227px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 .keytering_block_wr .title {
@@ -2957,14 +2966,14 @@ img, textarea, input, table {
   .menu_block .items-wrap .item .right_block .total {
     font-size: 18px;
   }
+  .menu_block .items-wrap .item:first-child .right_block {
+    display: block;
+  }
   .menu_block .items-wrap .item.opened {
     margin-bottom: 30px;
   }
   .menu_block .items-wrap .item.opened .left_block {
     margin-bottom: 30px;
-  }
-  .menu_block .items-wrap .item.opened .right_block {
-    display: block;
   }
 }
 .menu_block .scene4 {
@@ -3410,12 +3419,18 @@ img, textarea, input, table {
 .gallery_block .gallery_text_slider .date {
   margin-bottom: 10px;
 }
-.gallery_block .gallery_text_slider .date,
-.gallery_block .gallery_text_slider .name-sec {
+.gallery_block .gallery_text_slider .date {
   font-size: 22px;
   font-weight: 700;
   line-height: 22px;
   color: #FF6624;
+}
+.gallery_block .gallery_text_slider .name-sec {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  color: #fff0d4;
 }
 .gallery_block .gallery_text_slider .body {
   font-size: 22px;
@@ -4133,12 +4148,17 @@ img, textarea, input, table {
             flex: 0 0 100%;
     width: 100%;
     padding: 30px 20px;
+    position: static;
   }
   .gallery_block .gallery_text_slider .name {
     margin-bottom: 14px;
   }
   .gallery_block .gallery_text_slider .btns_wrap {
-    display: none;
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    left: auto;
+    margin: 0;
   }
   .gallery_block .gallery_slider {
     -webkit-box-flex: 0;
