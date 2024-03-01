@@ -298,5 +298,75 @@ $(function(){
             }, 5000);
         }
     });
+
+    $('.menu_form_wrapper .item .left_block').on('click', function(){
+        $(this).closest('.item').siblings().removeClass('opened')
+        $(this).closest('.item').addClass('opened');
+    });
+
+    $( ".date_input" ).datepicker({
+      dateFormat: 'dd.mm.yy', // Формат даты
+      prevText: '&#x3c;Пред', // Текст кнопки "Предыдущий"
+      nextText: 'След&#x3e;', // Текст кнопки "Следующий"
+      monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], // Названия месяцев
+      monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'], // Сокращенные названия месяцев
+      dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'], // Названия дней недели
+      dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // Сокращенные названия дней недели
+      dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // Минимальные сокращенные названия дней недели
+      weekHeader: 'Нед', // Заголовок недели
+      firstDay: 1, // Первый день недели (0 - воскресенье, 1 - понедельник и т.д.)
+      isRTL: false, // Порядок отображения текста (false - слева направо)
+      showMonthAfterYear: false, // Отображать месяц после года (true - год, месяц)
+      yearSuffix: '' // Суффикс года
+    });
+
+    // calc 
+
+
+    $('.select_set').on('click', function(){
+        $(this).closest('.sets_select').addClass('opened');
+    });
+
+    $(document).on('click touchstart', function(e){
+        if( $(e.target).closest('.select_set').length) 
+          return;
+        if ($('.sets_select').hasClass('opened')){
+            $('.sets_select').removeClass('opened')
+        }
+    });
+
+    $('.sets_select ul li').on('click', function(){
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        const value = $(this).text();
+        const parent =$(this).closest('.sets_select');
+        const gost = +$('.gost_set').val();
+
+        if(gost) {
+            const delevery = +$('.select_set').data('delevery');
+            const priceSet = +$(this).data('price');
+            const summ = (priceSet * gost ) + delevery;
+            const totalSumm = summ + (summ*0.15);
+            $('.field.price .total_price').text(totalSumm);
+            $('.field.price').show();
+        }
+        parent.find('.select_set').val(value);
+        parent.removeClass('opened');
+    });
+
+    $('input.gost_set').on('input', function(){
+        const gost = +$(this).val();
+        const priceSet = +$('.sets_select ul li.active').data('price');
+        console.log(priceSet)
+        if(priceSet) {
+            const delevery = +$('.select_set').data('delevery');
+            const summ = (priceSet * gost ) + delevery;
+            const totalSumm = summ + (summ*0.15);
+            $('.field.price .total_price').text(totalSumm);
+            $('.field.price').show();
+        }
+    })
+
+
 });
 
