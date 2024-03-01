@@ -32,13 +32,13 @@
         <div class="menu_scroll">
             <div class="burger_left">
                 <ul>
-                    <li><a href="">История компании</a></li>
-                    <li><a href="">Как мы работаем</a></li>
-                    <li><a href="">Меню</a></li>
-                    <li><a href="">Калькулятор цен</a></li>
-                    <li><a href="">Галерея мероприятий</a></li>
-                    <li><a href="">Отзывы</a></li>
-                    <li><a href="">Наши клиенты</a></li>
+                    <li><a href="#keytering">История компании</a></li>
+                    <li><a href="#working">Как мы работаем</a></li>
+                    <li><a href="#menublock">Меню</a></li>
+                    <li><a href="#calculator">Калькулятор цен</a></li>
+                    <li><a href="#gallery">Галерея мероприятий</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#clients">Наши клиенты</a></li>
                 </ul>
                 <div class="download_menu">
                     <a href="#"><span class="btn_bottom"></span><span>Скачать <Br>меню</span></a>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider_zn_block">
+            <div id="working" class="slider_zn_block">
                 <div class="block_inner">
                     <div class="left">
                         <div class="left_inner">
@@ -303,7 +303,7 @@
                 </div>
             </div>
             <div class="menu_form_wrapper">
-                <div class="menu_block">
+                <div id="menublock" class="menu_block">
                     <div class="block_inner">
                         <div class="header_block wow fadeInUp">Варианты меню</div>
                         <div class="description wow fadeInUp">На одну персону</div>
@@ -378,7 +378,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="form_block">
+                <div id="calculator" class="form_block">
                     <div class="block_inner wow fadeInUp">
                         <div class="header_block">Расчет стоимости мероприятия</div>
                         <form action="">
@@ -447,7 +447,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="gallery_block">
+            <div id="gallery" class="gallery_block">
                 <div class="header_block wow fadeInUp">Галерея</div>
                 <div class="description wow fadeInUp">Мероприятий</div>
                 <ul id="scene5" class="scene5 unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
@@ -592,7 +592,7 @@
                     </div>
                 </div>
             </div>
-            <div class="recomended_block">
+            <div id="reviews" class="recomended_block">
                 <div class="block_inner">
                     <div class="header_block">
                         <div class="title wow fadeInUp">Нас рекомендуют</div>
@@ -669,7 +669,7 @@
                     </div>
                 </div>
             </div>
-            <div class="trust_block">
+            <div id="clients" class="trust_block">
                 <div class="block_inner">
                     <div class="title wow fadeInUp">Нам доверяют</div>
                     <div class="swiper trustSlider" data-id="trustSlider">
@@ -789,9 +789,10 @@
                                 <div class="field_name"><span>Ф.И.О</span></div>
                                 <input type="text">
                             </div>
-                            <div class="field">
+                            <div class="field error">
                                 <div class="field_name"><span>Телефон</span></div>
                                 <input type="text">
+                                <div class="error_text">Поле заполнено неверно</div>
                             </div>
                             <input type="submit" value="Заказать" class="btn_button">
                             <div class="text">Нажимая кнопку «Отправить» вы соглашаетесь с условиями пользовательского соглашения</div>

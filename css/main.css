@@ -244,6 +244,26 @@ img, textarea, input, table {
   vertical-align: top;
   background: #FF6624;
 }
+.field .error_text {
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FF2424;
+  display: none;
+  margin-top: 8px;
+}
+.field.error input[type=text], .field.error input[type=password], .field.error input[type=tel], .field.error select {
+  border-color: #FF2424 !important;
+  color: #FF2424;
+}
+.field.error .field_name {
+  color: #FF2424;
+}
+.field.error .error_text {
+  display: block;
+}
 
 .burger {
   -webkit-box-flex: 0;
@@ -3679,6 +3699,11 @@ img, textarea, input, table {
   line-height: 44px;
   text-decoration: none;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.footer_menu li a:hover {
+  color: #fff0d4;
 }
 
 .modal_form {

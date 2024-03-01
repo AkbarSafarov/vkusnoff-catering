@@ -244,6 +244,32 @@ img, textarea, input, table {
             background: $orange;
         }
     }
+
+    .error_text {
+        font-size: 14px;
+        font-weight: 450;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FF2424;
+        display: none;
+        margin-top: 8px;
+    }
+
+    &.error {
+        input[type="text"],input[type="password"],input[type="tel"],select  {
+            border-color: #FF2424 !important;
+            color: #FF2424;
+        }
+
+        .field_name {
+            color: #FF2424;
+        }
+
+        .error_text {
+            display: block;
+        }
+    }
 }
 
 .burger {
@@ -3625,6 +3651,11 @@ img, textarea, input, table {
         line-height: 44px;
         text-decoration: none;
         text-transform: uppercase;
+        transition: all .3s;
+
+        &:hover {
+            color: $white_y;
+        }
     }
 }
 

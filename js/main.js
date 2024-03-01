@@ -109,6 +109,19 @@ $(function(){
         }
     });
 
+    $('.menu_burger .burger_left ul li a').on('click', function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 150
+        },500);
+        if (menuBtn.hasClass(openedMenu)){
+            menuWrapper.removeClass(openedMenu);
+            menuBtn.removeClass(openedMenu);
+            $html.removeClass(overflowHidden);
+            $html.removeClass('open_menu');
+        }
+    });
+
     // end burger menu
 
 
@@ -369,6 +382,6 @@ $(function(){
         }
     })
 
-
+    
 });
 
