@@ -109,7 +109,7 @@ $(function(){
         }
     });
 
-    $('.menu_burger .burger_left ul li a').on('click', function(e){
+    $('.menu_burger .burger_left ul li a,.footer_menu li a').on('click', function(e){
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top - 150
